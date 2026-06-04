@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Privacy Policy - HabitFlow Pro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #1a1a2e;
+        }
+
+        .privacy-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .privacy-header {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            animation: fadeInDown 0.6s ease-out;
+        }
+
+        .privacy-header h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .last-updated {
+            color: #666;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* Navigation Tabs */
+        .privacy-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            background: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            color: #666;
+        }
+
+        .tab-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        /* Content Cards */
+        .privacy-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .privacy-section {
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .privacy-section.active-section {
+            display: block;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #667eea;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .subsection {
+            margin-bottom: 30px;
+        }
+
+        .subsection h3 {
+            font-size: 1.3rem;
+            color: #1a1a2e;
+            margin-bottom: 15px;
+            margin-top: 20px;
+        }
+
+        .subsection p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .subsection ul, .subsection ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .subsection li {
+            margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8eeff 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .data-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .data-card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .data-card p {
+            font-size: 0.9rem;
+        }
+
+        .consent-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102,126,234,0.4);
+        }
+
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #666;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+            transform: translateY(-2px);
+        }
+
+        .btn-danger {
+            background: #ef4444;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #dc2626;
+            transform: translateY(-2px);
+        }
+
+        /* Cookie Banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            display: none;
+            z-index: 1000;
+            animation: slideUp 0.5s ease-out;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .cookie-banner.show {
+            display: block;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Back to App Button */
+        .back-to-app {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-to-app:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .privacy-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .privacy-content {
+                padding: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+            
+            .back-to-app {
+                top: 10px;
+                right: 10px;
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .back-to-app, .privacy-tabs, .consent-buttons, .cookie-banner {
+                display: none;
+            }
+            
+            .privacy-section {
+                display: block !important;
+            }
+            
+            .privacy-container {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="habit-tracker-pro.html" class="back-to-app">← Back to App</a>
+    
+    <div class="privacy-container">
+        <div class="privacy-header">
+            <h1>🔒 Privacy Policy</h1>
+            <p>Your privacy matters. We're committed to protecting your data.</p>
+            <div class="last-updated">Last Updated: January 15, 2024</div>
+        </div>
+
+        <div class="privacy-tabs">
+            <button class="tab-btn active" data-tab="overview">📋 Overview</button>
+            <button class="tab-btn" data-tab="data">📊 Data Collection</button>
+            <button class="tab-btn" data-tab="cookies">🍪 Cookies</button>
+            <button class="tab-btn" data-tab="rights">⚖️ Your Rights</button>
+            <button class="tab-btn" data-tab="consent">✅ Consent</button>
+        </div>
+
+        <div class="privacy-content">
+            <!-- Overview Section -->
+            <div id="overview" class="privacy-section active-section">
+                <h2 class="section-title">Overview</h2>
+                
+                <div class="highlight-box">
+                    <strong>📌 Quick Summary:</strong>
+                    <p style="margin-top: 10px;">HabitFlow Pro is designed with privacy-first principles. We do NOT sell your data, we do NOT share your personal information with third parties, and all your habit data stays on YOUR device unless you choose to export it.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>🌍 Our Commitment</h3>
+                    <p>At HabitFlow Pro, we believe that your personal habit data is sensitive and private. Our app is built on the principle of <strong>data minimization</strong> and <strong>local-first storage</strong>. This means:</p>
+                    <ul>
+                        <li>✅ Your data never leaves your browser unless you explicitly export it</li>
+                        <li>✅ No external servers store your habits or personal information</li>
+                        <li>✅ No tracking pixels or analytics scripts</li>
+                        <li>✅ Complete transparency about how the app works</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3>🏢 Who We Are</h3>
+                    <p>HabitFlow Pro is a personal habit tracking application created to help individuals build better habits. We operate as a client-side only application, meaning all processing happens directly in your web browser.</p>
+                    <p><strong>Contact:</strong> privacy@habitflowpro.com</p>
+                </div>
+
+                <div class="data-grid">
+                    <div class="data-card">
+                        <h4>🔒 Local Storage</h4>
+                        <p>All data stored in your browser</p>
+                    </div>
+                    <div class="data-card">
+                        <h4>🚫 No Tracking</h4>
+                        <p>Zero third-party analytics</p>
+                    </div>
+                    <div class="data-card">
+                        <h4>💪 You Control</h4>
+                        <p>Full export/delete capabilities</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Collection Section -->
+            <div id="data" class="privacy-section">
+                <h2 class="section-title">Data Collection</h2>
+                
+                <div class="subsection">
+                    <h3>📝 What Data We Collect</h3>
+                    <p>HabitFlow Pro collects only the data you actively provide:</p>
+                    <ul>
+                        <li><strong>Habit Information:</strong> Habit names, categories, and completion dates</li>
+                        <li><strong>Usage Preferences:</strong> App settings (dark mode, notification preferences)</li>
+                        <li><strong>No Personal Identifiers:</strong> We don't collect names, emails, IP addresses, or location data</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3>💾 How Data is Stored</h3>
+                    <p>All data is stored locally in your browser using the <strong>localStorage API</strong>. This means:</p>
+                    <ul>
+                        <li>📀 Data persists between browser sessions</li>
+                        <li>🌐 No internet connection required for the app to work</li>
+                        <li>🔐 Only you can access your data (no cloud storage)</li>
+                        <li>🗑️ You can clear data at any time via browser settings or app reset</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>⚠️ Important Note:</strong>
+                    <p>Clearing your browser's cache/localStorage will permanently delete all your habit data. We recommend using the export feature to create backups.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>📤 Data Export & Sharing</h3>
+                    <p>You have complete control over your data:</p>
+                    <ul>
+                        <li>✅ Export your data as JSON file anytime</li>
+                        <li>✅ Import previously exported backups</li>
+                        <li>✅ Delete all data permanently via Settings</li>
+                        <li>❌ We do NOT have access to your exported files</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Cookies Section -->
+            <div id="cookies" class="privacy-section">
+                <h2 class="section-title">Cookie Policy</h2>
+                
+                <div class="subsection">
+                    <h3>🍪 What are Cookies?</h3>
+                    <p>Cookies are small text files stored on your device that help websites remember information about your visit.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>🔧 How HabitFlow Pro Uses localStorage</h3>
+                    <p>Instead of traditional cookies, we use the browser's localStorage feature which serves a similar purpose but with more control:</p>
+                    <ul>
+                        <li><strong>Essential Data:</strong> Stores your habits, completions, and app preferences</li>
+                        <li><strong>No Tracking Cookies:</strong> We don't use any third-party cookies or tracking mechanisms</li>
+                        <li><strong>Session Persistence:</strong> Keeps your data available between visits</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>🔐 Your Cookie Choices:</strong>
+                    <p>You can disable localStorage in your browser settings, but this will prevent the app from saving your data. You can also clear localStorage anytime via browser developer tools or the app's reset feature.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>📊 Third-Party Services</h3>
+                    <p>HabitFlow Pro uses <strong>NO</strong> third-party services that set cookies or track users. The only external resource is Chart.js (for graphs), which doesn't set any cookies or collect data.</p>
+                </div>
+            </div>
+
+            <!-- Your Rights Section -->
+            <div id="rights" class="privacy-section">
+                <h2 class="section-title">Your Privacy Rights</h2>
+                
+                <div class="subsection">
+                    <h3>🌐 GDPR & CCPA Compliance</h3>
+                    <p>As a client-side application with no server-side data processing, HabitFlow Pro inherently respects your privacy rights:</p>
+                    <ul>
+                        <li><strong>Right to Access:</strong> View all your data through the app interface</li>
+                        <li><strong>Right to Delete:</strong> Delete individual habits or reset all data</li>
+                        <li><strong>Right to Portability:</strong> Export your data in JSON format</li>
+                        <li><strong>Right to Object:</strong> No data processing to object to since everything is local</li>
+                        <li><strong>Right to Rectification:</strong> Edit your habits and completions anytime</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3>🛡️ How to Exercise Your Rights</h3>
+                    <div class="consent-buttons">
+                        <button class="btn btn-primary" id="exportDataBtn">📥 Export My Data</button>
+                        <button class="btn btn-danger" id="resetDataBtn">🗑️ Delete All My Data</button>
+                    </div>
+                    <p style="margin-top: 15px;">These actions perform the requested operations immediately. No waiting period or verification required since all data is under your control.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3>👶 Children's Privacy</h3>
+                    <p>HabitFlow Pro does not knowingly collect data from children under 13. The app is designed for general audiences and doesn't require any age verification since no personal data is collected.</p>
+                </div>
+            </div>
+
+            <!-- Consent Section -->
+            <div id="consent" class="privacy-section">
+                <h2 class="section-title">User Consent</h2>
+                
+                <div class="subsection">
+                    <h3>✅ By Using This App, You Consent To:</h3>
+                    <ul>
+                        <li>✓ Local storage of your habit data in your browser</li>
+                        <li>✓ Using localStorage for app functionality</li>
+                        <li>✓ Exporting your data (when you choose to do so)</li>
+                        <li>✓ App settings being saved locally</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3>📋 What You DON'T Consent To:</h3>
+                    <ul>
+                        <li>✗ Your data being sent to any external servers</li>
+                        <li>✗ Third-party tracking or analytics</li>
+                        <li>✗ Your personal information being sold or shared</li>
+                        <li>✗ Unauthorized access to your data</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>🔄 Withdrawing Consent:</strong>
+                    <p>You can withdraw your consent at any time by:</p>
+                    <ol>
+                        <li>Clearing your browser's localStorage/cache</li>
+                        <li>Using the "Reset All Data" button in Settings</li>
+                        <li>Simply stopping use of the application</li>
+                    </ol>
+                </div>
+
+                <div class="subsection">
+                    <h3>📧 Changes to This Policy</h3>
+                    <p>We may update this privacy policy occasionally. The latest version will always be available within the app. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+                    <p><strong>Last reviewed:</strong> January 15, 2024</p>
+                </div>
+
+                <div class="consent-buttons">
+                    <button class="btn btn-primary" id="acceptConsent">I Understand & Accept</button>
+                    <button class="btn btn-secondary" id="declineConsent">Decline & Leave</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" class="cookie-banner">
+        <h3>🍪 Cookie Consent</h3>
+        <p style="margin: 10px 0;">HabitFlow Pro uses localStorage to store your habits and preferences. This is essential for the app to function properly.</p>
+        <div class="consent-buttons">
+            <button class="btn btn-primary" id="acceptCookies">Accept & Continue</button>
+            <button class="btn btn-secondary" id="declineCookies">Decline (App Won't Save Data)</button>
+        </div>
+    </div>
+
+    <script>
+        // Privacy Policy Page Functionality
+        class PrivacyManager {
+            constructor() {
+                this.initTabs();
+                this.initConsentButtons();
+                this.initCookieBanner();
+                this.checkConsentStatus();
+            }
+
+            initTabs() {
+                const tabBtns = document.querySelectorAll('.tab-btn');
+                const sections = document.querySelectorAll('.privacy-section');
+
+                tabBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const tabId = btn.dataset.tab;
+                        
+                        // Update active states
+                        tabBtns.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        
+                        sections.forEach(section => section.classList.remove('active-section'));
+                        document.getElementById(tabId).classList.add('active-section');
+                        
+                        // Scroll to top of content
+                        document.querySelector('.privacy-content').scrollIntoView({ behavior: 'smooth' });
+                    });
+                });
+            }
+
+            initConsentButtons() {
+                const acceptBtn = document.getElementById('acceptConsent');
+                const declineBtn = document.getElementById('declineConsent');
+                const exportBtn = document.getElementById('exportDataBtn');
+                const resetBtn = document.getElementById('resetDataBtn');
+
+                if (acceptBtn) {
+                    acceptBtn.addEventListener('click', () => {
+                        localStorage.setItem('privacyConsent', 'accepted');
+                        alert('Thank you for accepting the privacy policy! You can now use the app with full features.');
+                        window.location.href = 'habit-tracker-pro.html';
+                    });
+                }
+
+                if (declineBtn) {
+                    declineBtn.addEventListener('click', () => {
+                        if (confirm('You have declined the privacy policy. You will be redirected to a search engine.')) {
+                            window.location.href = 'https://www.google.com';
+                        }
+                    });
+                }
+
+                if (exportBtn) {
+                    exportBtn.addEventListener('click', () => {
+                        const habits = localStorage.getItem('habitTrackerPro');
+                        if (habits) {
+                            const blob = new Blob([habits], { type: 'application/json' });
+                            const url = URL.createObjectURL(blob);
+                            const a = document.createElement('a');
+                            a.href = url;
+                            a.download = `habits-export-${new Date().toISOString().split('T')[0]}.json`;
+                            a.click();
+                            URL.revokeObjectURL(url);
+                            alert('Your data has been exported successfully!');
+                        } else {
+                            alert('No data found to export.');
+                        }
+                    });
+                }
+
+                if (resetBtn) {
+                    resetBtn.addEventListener('click', () => {
+                        if (confirm('⚠️ WARNING: This will permanently delete ALL your habit data. Are you absolutely sure?')) {
+                            localStorage.removeItem('habitTrackerPro');
+                            localStorage.removeItem('privacyConsent');
+                            alert('All data has been deleted. The page will now reload.');
+                            location.reload();
+                        }
+                    });
+                }
+            }
+
+            initCookieBanner() {
+                const banner = document.getElementById('cookieBanner');
+                const acceptCookies = document.getElementById('acceptCookies');
+                const declineCookies = document.getElementById('declineCookies');
+
+                if (!localStorage.getItem('cookieConsent')) {
+                    setTimeout(() => {
+                        banner.classList.add('show');
+                    }, 1000);
+                }
+
+                if (acceptCookies) {
+                    acceptCookies.addEventListener('click', () => {
+                        localStorage.setItem('cookieConsent', 'accepted');
+                        banner.classList.remove('show');
+                        this.showNotification('Cookies accepted! App functionality is now fully enabled.', 'success');
+                    });
+                }
+
+                if (declineCookies) {
+                    declineCookies.addEventListener('click', () => {
+                        localStorage.setItem('cookieConsent', 'declined');
+                        banner.classList.remove('show');
+                        this.showNotification('You declined cookies. The app will work but your data will not be saved.', 'warning');
+                    });
+                }
+            }
+
+            checkConsentStatus() {
+                const consent = localStorage.getItem('privacyConsent');
+                const cookieConsent = localStorage.getItem('cookieConsent');
+                
+                if (!consent) {
+                    console.log('ℹ️ Privacy Policy: User has not yet accepted the privacy policy');
+                } else {
+                    console.log('✅ Privacy Policy: User has accepted the privacy policy');
+                }
+                
+                if (!cookieConsent) {
+                    console.log('🍪 Cookie Consent: Awaiting user consent');
+                } else {
+                    console.log(`🍪 Cookie Consent: User ${cookieConsent} cookies`);
+                }
+            }
+
+            showNotification(message, type) {
+                const notification = document.createElement('div');
+                notification.style.position = 'fixed';
+                notification.style.bottom = '20px';
+                notification.style.right = '20px';
+                notification.style.backgroundColor = type === 'success' ? '#10b981' : '#f59e0b';
+                notification.style.color = 'white';
+                notification.style.padding = '15px 25px';
+                notification.style.borderRadius = '12px';
+                notification.style.zIndex = '1001';
+                notification.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
+                notification.style.animation = 'slideUp 0.3s ease-out';
+                notification.textContent = message;
+                
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.remove();
+                }, 3000);
+            }
+        }
+
+        // Initialize privacy manager
+        const privacyManager = new PrivacyManager();
+
+        // Console logs for developers
+        console.log('%c🔒 Privacy Policy Page Loaded', 'color: #667eea; font-size: 16px; font-weight: bold;');
+        console.log('%c📊 Data Storage: LocalStorage only', 'color: #10b981;');
+        console.log('%c🚫 No external tracking or analytics', 'color: #10b981;');
+        console.log('%c💾 You have full control over your data', 'color: #667eea;');
+        
+        // Display storage info
+        const storageInfo = () => {
+            let totalSize = 0;
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                const value = localStorage.getItem(key);
+                totalSize += (key.length + value.length) * 2;
+            }
+            console.log(`💾 LocalStorage Usage: ~${(totalSize / 1024).toFixed(2)} KB`);
+        };
+        
+        storageInfo();
+        
+        // GDPR Compliance Note
+        console.log('%c🌐 GDPR Compliant: All data processing is client-side', 'color: #8b5cf6;');
+        console.log('%c📋 For any privacy concerns, contact: privacy@habitflowpro.com', 'color: #8b5cf6;');
+    </script>
+</body>
+</html>
